@@ -19,7 +19,8 @@ class RandomQuoteCubit extends Cubit<RandomQuoteState>
    final Either<Failure,Quote> response = await getRandomQuoteUseCase.call(NoParams());
    emit(
      response.fold(
-             (failure) => RandomQuoteExceptionState(msg: _mapFailureToMsg(failure)), (quote) => RandomQuoteLoaded(quote: quote))
+             (failure) => RandomQuoteExceptionState(msg: _mapFailureToMsg(failure)),
+             (quote) => RandomQuoteLoaded(quote: quote))
    );
   }
 

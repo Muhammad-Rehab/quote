@@ -9,9 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocaleManager
 {
-
   Future<Locale> initLocal ();
-  Future<Locale> local(String languageCode) ;
+  Future<Locale> setLocal(String languageCode) ;
 }
 
 class GetLocalLanguage implements LocaleManager
@@ -45,7 +44,7 @@ class GetLocalLanguage implements LocaleManager
   }
 
   @override
-  Future<Locale> local(String languageCode) async
+  Future<Locale> setLocal(String languageCode) async
   {
     if(languageCode == AppStrings.arabicLanguageCode){
       localization.translate(AppStrings.arabicLanguageCode);
@@ -57,7 +56,6 @@ class GetLocalLanguage implements LocaleManager
       }
     languageModel.locale = localization.currentLocale!;
     return languageModel.locale;
-
   }
 
 }

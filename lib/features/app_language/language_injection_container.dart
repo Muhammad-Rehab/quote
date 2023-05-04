@@ -13,7 +13,7 @@ import 'package:quotes/features/app_language/domain/usecase/init_language.dart';
 import 'package:quotes/features/app_language/presentation/cubit/language_cubit.dart';
 
 
-languageInjectionInit () async
+languageInjectionInit ()
 {
   serviceLocator.registerFactory(() => LanguageCubit(
       initLanguage: serviceLocator(),

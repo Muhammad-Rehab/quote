@@ -11,7 +11,7 @@ import 'package:quotes/features/random_quotes/presentaion/cubit/random_quote_cub
 
 
 
-quoteInjectionInit() async
+quoteInjectionInit()
 {
   // Features
   serviceLocator.registerFactory(() => RandomQuoteCubit(getRandomQuoteUseCase: serviceLocator()));
@@ -31,7 +31,6 @@ quoteInjectionInit() async
       () => NetworkInfoImpl(internetConnectionChecker: serviceLocator()));
   serviceLocator.registerLazySingleton<ApiConsumer>(() => DioImplementation(client: serviceLocator()));
 
-  // Exported
 
 
 }

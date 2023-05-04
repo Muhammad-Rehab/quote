@@ -10,6 +10,7 @@ import '../../domain/usecase/init_language.dart';
 
 class LanguageCubit extends Bloc<LanguageCubit,LanguageState>
 {
+
   InitLanguage initLanguage;
   ChangeLanguage changeLanguage;
 

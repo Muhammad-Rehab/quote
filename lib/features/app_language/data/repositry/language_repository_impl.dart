@@ -14,16 +14,17 @@ class LanguageRepositoryImpl implements LanguageRepository
 
 
   @override
-  Future<Either<Failure, Locale>> toggleLanguage() async{
+  Future<Either<Failure, Locale>> toggleLanguage() async
+  {
     try
     {
       Locale locale ;
       if( getLocalLanguage.isArabic())
         {
-          locale = await getLocalLanguage.local(AppStrings.englishLanguageCode);
+          locale = await getLocalLanguage.setLocal(AppStrings.englishLanguageCode);
         }else
           {
-            locale = await getLocalLanguage.local(AppStrings.arabicLanguageCode);
+            locale = await getLocalLanguage.setLocal(AppStrings.arabicLanguageCode);
           }
       return Right(locale);
     }
@@ -34,7 +35,8 @@ class LanguageRepositoryImpl implements LanguageRepository
   }
 
   @override
-  Future<Either<Failure,Locale>> initLanguage()async {
+  Future<Either<Failure,Locale>> initLanguage()async
+  {
     try
     {
       Locale locale = await getLocalLanguage.initLocal();
